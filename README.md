@@ -114,7 +114,7 @@
 
 6. Подготовим `Dockerfile` удовлетворяющий следующим требованиям:
     * web-сервер на порту 8000 (можно использовать любой способ)
-    * Отдающий содержимое директории /app внутри контейнера (например, если в директории /app лежит файл homework.html, то при запуске контейнера данный файл должен быть доступен по URL http://localhost:8000/homework.html)
+    * Отдающий содержимое директории /app внутри контейнера (например, если в директории /app лежит файл homework.html, то при запуске контейнера данный файл должен быть доступен по [URL](http://localhost:8000/homework.html)
     * Работающий с UID 1001
 
 7. Соберём из него `Docker image` и поместим его в `DockerHub Container Registry`:
@@ -150,7 +150,7 @@
     kubectl describe pod web
     ```
 
-10. Добавим в манифест init container и Volumes.
+10. Добавим в манифест `init container` и `volumes` огласно описанию.
 11. Перезапустим pod с новым манифестом удалив старый и запустив заново:
 
     ```bash
@@ -171,7 +171,7 @@
     kubectl port-forward --address 0.0.0.0 pod/web 8000:8000
     ```
 
-13. Далее в домашних заданиях мы будем использовать микросервисное приложение Hipster Shop. Клонируем [репозиторий](https://github.com/GoogleCloudPlatform/microservices-demo), собираем Docker image приложения frontend и пушим  DockerHub ContainerRegistry:
+13. Далее в домашних заданиях мы будем использовать микросервисное приложение Hipster Shop. Клонируем [репозиторий](https://github.com/GoogleCloudPlatform/microservices-demo), собираем `Docker image` приложения `frontend` и пушим  `DockerHub ContainerRegistry`:
 
     ```bash
     git clone https://github.com/GoogleCloudPlatform/microservices-demo
@@ -189,7 +189,7 @@
 
 15. Задание со *:
 
-    в логах приложения видим, что недостаёт объявленных переменных среды:
+    в логах приложения видим, что нехватает объявленных переменных среды:
 
     ```bash
     kubectl logs frontend
@@ -202,7 +202,7 @@
         /go/src/github.com/GoogleCloudPlatform/microservices-demo/src/frontend/main.go:106 +0x3e9
     ```
 
-    Идём в [документацию](https://github.com/GoogleCloudPlatform/microservices-demo/blob/master/kubernetes-manifests/frontend.yaml) и видим, сто необходимо добавить несколько ENV переменных. Копируем frontend-pod.yaml в frontend-pod-healthy.yaml дополняем манифест переменными среды, удаляем старый pod и запускаем новый из манифестаfrontend-pod-healthy.yaml:
+    Идём в [документацию](https://github.com/GoogleCloudPlatform/microservices-demo/blob/master/kubernetes-manifests/frontend.yaml) и видим, что необходимо добавить несколько ENV переменных. Копируем frontend-pod.yaml в frontend-pod-healthy.yaml дополняем манифест переменными среды, удаляем старый pod и запускаем новый из манифеста frontend-pod-healthy.yaml:
 
     ```bash
     cp kubernetes-intro/frontend-pod.yaml kubernetes-intro/frontend-pod-healthy.yaml
