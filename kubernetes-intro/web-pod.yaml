@@ -20,6 +20,13 @@ spec:
   containers:
     - name: web
       image: gidmaster/otus-k8s-nginx
+      readinessProbe:
+        httpGet:
+          path: /index.html
+          port: 80
+      livenessProbe:
+        tcpSocket:
+          {port: 8000}
       volumeMounts:
         - name: app
           mountPath: /app
