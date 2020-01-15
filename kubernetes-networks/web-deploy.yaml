@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 100%
+      maxSurge: 100%
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: web
+        image: gidmaster/web:v1
+        livenessProbe:
+          tcpSocket:
+            port: 8000
+        readinessProbe:
+          httpGet:
+            path: /index.html
+            port: 8000
+        volumeMounts:
+          - name: app
+            mountPath: /app
+      initContainers:
+        - name: html-gen
+          image: busybox:musl
+          command: ['sh', '-c', 'wget -O- https://bit.ly/otus-k8s-index-gen | sh']
+          volumeMounts:
+            - name: app
+              mountPath: /app
+      volumes:
+        - name: app
+          emptyDir: {}
