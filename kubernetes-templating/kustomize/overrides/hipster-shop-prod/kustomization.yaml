@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namePrefix: prod-
+
+namespace: hipster-shop-prod
+
+commonLabels:
+  environment: prod
+
+images:
+- name: gcr.io/google-samples/microservices-demo/recommendationservice:v0.1.3
+  newTag: v0.1.2
+
+bases:
+- ../../base

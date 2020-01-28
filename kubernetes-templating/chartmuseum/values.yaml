@@ -1,0 +1,19 @@
+env:
+  open:
+    STORAGE: local
+    DISABLE_API: false
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 8Gi
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+    certmanager.k8s.io/cluster-issuer: "letsencrypt-production"
+  hosts:
+    - name: chartmuseum.gidmaster.dev
+      path: /
+      tls: true
+      tlsSecret: chartmuseum-tls
