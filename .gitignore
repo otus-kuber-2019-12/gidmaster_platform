@@ -1,2 +1,5 @@
 .terraform
 *.tfstate
+gidmaster_venv
+.vscode
+__pycache__

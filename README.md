@@ -8,3 +8,4 @@
 4. [Домашнее задание 4](kubernetes-networks/README.md)
 5. [Домашнее задание 5](kubernetes-vlolumes/README.md)
 6. [Домашнее задание 6](kubernetes-templating/README.md)
+7. [Домашнее задание 7](kubernetes-operators/README.md)
