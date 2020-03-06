@@ -10,3 +10,5 @@
 6. [Домашнее задание 6](kubernetes-templating/README.md)
 7. [Домашнее задание 7](kubernetes-operators/README.md)
 8. [Домашнее задание 8](kubernetes-operators/README.md)
+9. Домашнее задание 9 (not implemented yet)
+10. [Домашнее задание 10](kubernetes-vault/README.md)
