@@ -1,0 +1,14 @@
+ingress:
+  enabled: true
+  annotations: {
+    kubernetes.io/ingress.class: nginx,
+    kubernetes.io/tls-acme: "true",
+    certmanager.k8s.io/cluster-issuer: "letsencrypt-production"
+  }
+  path: /
+  hosts:
+    - kibana.gidmaster.dev
+  tls:
+   - secretName: chart-example-tls
+     hosts:
+       - kibana.gidmaster.dev
