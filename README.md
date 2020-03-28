@@ -11,3 +11,6 @@
 7. [Домашнее задание 7.](kubernetes-operators/README.md) **"operators"**
 8. [Домашнее задание 8.](kubernetes-monitoring/README.md) **"monitoring"**
 9. [Домашнее задание 9.](kubernetes-logging/README.md) **"logging"**
+
+11. [Домашнее задание 11.](kubernetes-gitops/README.md) **"gitops"**
+ 
