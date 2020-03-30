@@ -13,4 +13,3 @@
 9. [Домашнее задание 9.](kubernetes-logging/README.md) **"logging"**
 
 11. [Домашнее задание 11.](kubernetes-gitops/README.md) **"gitops"**
- 
