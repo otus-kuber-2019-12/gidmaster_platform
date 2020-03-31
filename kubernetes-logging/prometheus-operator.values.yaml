@@ -1,0 +1,55 @@
+commonLabels:
+  prometheus: default
+
+alertmanager:
+  ingress:
+    enabled: true
+    annotations: {
+      kubernetes.io/ingress.class: nginx,
+      kubernetes.io/tls-acme: "true",
+      certmanager.k8s.io/cluster-issuer: "letsencrypt-production"
+    }
+    path: /
+    hosts:
+      - alertmanager.gidmaster.dev
+    tls:
+    - secretName:  alertmanager-general-tls
+      hosts:
+        - alertmanager.gidmaster.dev
+
+grafana:
+  enabled: true
+
+  defaultDashboardsEnabled: true
+
+  adminPassword: prom-operator
+
+  additionalDataSources:
+    - name: loki
+      type: loki
+      url: http://loki:3100
+
+  ingress:
+    enabled: true
+    annotations: {
+      kubernetes.io/ingress.class: nginx,
+      kubernetes.io/tls-acme: "true",
+      certmanager.k8s.io/cluster-issuer: "letsencrypt-production"
+    }
+    path: /
+    hosts:
+      - grafana.gidmaster.dev
+    tls:
+    - secretName:  grafana-general-tls
+      hosts:
+        - grafana.gidmaster.dev
+
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+  serviceMonitorSelector:
+  ## Example which selects ServiceMonitors with label "prometheus" set to "somelabel"
+  # serviceMonitorSelector:
+    matchLabels:
+      prometheus: default
+  serviceMonitorNamespaceSelector: {}

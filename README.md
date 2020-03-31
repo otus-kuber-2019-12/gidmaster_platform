@@ -2,13 +2,13 @@
 
 Содержание:
 
-1. [Домашнее задание 1](kubernetes-intro/README.md)
-2. [Домашнее задание 2](kubernetes-controllers/README.md)
-3. [Домашнее задание 3](kubernetes-security/README.md)
-4. [Домашнее задание 4](kubernetes-networks/README.md)
-5. [Домашнее задание 5](kubernetes-vlolumes/README.md)
-6. [Домашнее задание 6](kubernetes-templating/README.md)
-7. [Домашнее задание 7](kubernetes-operators/README.md)
-8. [Домашнее задание 8](kubernetes-operators/README.md)
-9. Домашнее задание 9 (not implemented yet)
+1. [Домашнее задание 1.](kubernetes-intro/README.md) **"intro"**
+2. [Домашнее задание 2.](kubernetes-controllers/README.md) **"controllers"**
+3. [Домашнее задание 3.](kubernetes-security/README.md) **"security"**
+4. [Домашнее задание 4.](kubernetes-networks/README.md) **"networks"**
+5. [Домашнее задание 5.](kubernetes-vlolumes/README.md) **"vlolumes"**
+6. [Домашнее задание 6.](kubernetes-templating/README.md) **"templating"**
+7. [Домашнее задание 7.](kubernetes-operators/README.md) **"operators"**
+8. [Домашнее задание 8.](kubernetes-monitoring/README.md) **"monitoring"**
+9. [Домашнее задание 9.](kubernetes-logging/README.md) **"logging"**
 10. [Домашнее задание 10](kubernetes-vault/README.md)
