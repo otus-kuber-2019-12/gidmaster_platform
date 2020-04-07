@@ -1,0 +1,5 @@
+image:
+  repository: gidmaster/loadgenerator
+  tag: latest
+ingress:
+  host: hipster-shop.gidmaster.dev

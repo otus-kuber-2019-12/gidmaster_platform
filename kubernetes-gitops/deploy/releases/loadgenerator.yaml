@@ -1,0 +1,23 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: loadgenerator
+  namespace: microservices-demo
+  annotations:
+    fluxcd.io/ignore: "false"
+    fluxcd.io/automated: "true"
+    flux.weave.works/tag.chart-image: semver:~v0.0
+spec:
+  releaseName: loadgenerator
+  helmVersion: v3
+  chart:
+    git: git@gitlab.com:gidmaster/microservices-demo.git
+    ref: master
+    path: deploy/charts/loadgenerator
+  values:
+    image:
+      repository: gidmaster/loadgenerator
+      tag: v0.0.1
+    # ingress:
+    #   host: kubernetes-platform-demo.express42.io
