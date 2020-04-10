@@ -1,7 +1,7 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: otus-restored
+  name: storage-pod-restored
 spec:
   containers:
     - name: app

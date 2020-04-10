@@ -219,8 +219,8 @@
     csi-pvc       Bound    pvc-829fad3b-ef60-4640-865f-dd02dbbaffda   1Gi        RWO            csi-hostpath-sc   59m
     storage-pvc   Bound    pvc-3393f4eb-edb6-4284-af14-0625b61ea040   1Gi        RWO            otus-sc           56s
 
-    kubectl describe pods/otus
-    Name:         otus
+    kubectl describe pods/storage-pod
+    Name:         storage-pod
     Namespace:    default
     Priority:     0
     Node:         minikube/192.168.99.114
@@ -270,7 +270,7 @@
     Events:
     Type    Reason                  Age   From                     Message
     ----    ------                  ----  ----                     -------
-    Normal  Scheduled               70s   default-scheduler        Successfully assigned default/otus to minikube
+    Normal  Scheduled               70s   default-scheduler        Successfully assigned default/storage-pod to minikube
     Normal  SuccessfulAttachVolume  70s   attachdetach-controller  AttachVolume.Attach succeeded for volume "pvc-3393f4eb-edb6-4284-af14-0625b61ea040"
     Normal  Pulling                 61s   kubelet, minikube        Pulling image "busybox"
     Normal  Pulled                  58s   kubelet, minikube        Successfully pulled image "busybox"
@@ -291,7 +291,7 @@
     Сгенирируем даных для снапшота:
 
     ```bash
-    kubectl exec -it otus -- /bin/sh/
+    kubectl exec -it storage-pod -- /bin/sh/
 
     touch /data/hello-world
     touch /data/test
@@ -340,7 +340,7 @@
     Сгенерируем ещё данных в контейнере, уже после создания snapshot'a, чтобы позже сравнить:
 
     ```bash
-    kubectl exec -it otus -- /bin/sh
+    kubectl exec -it storage-pod -- /bin/sh
 
     ls -na /data
     total 4
@@ -394,7 +394,7 @@
     Посмотрим, что внутри:
 
     ```bash
-    kubectl exec -it otus-restored -- /bin/sh
+    kubectl exec -it storage-pod-restored -- /bin/sh
 
     ls -na /data
     total 4
