@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: app
-      image: busybox
+      image: bash
       volumeMounts:
       - mountPath: "/data"
         name: data-volume
