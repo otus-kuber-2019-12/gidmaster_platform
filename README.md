@@ -12,6 +12,7 @@
 8. [Домашнее задание 8.](kubernetes-monitoring/README.md) **"monitoring"**
 9. [Домашнее задание 9.](kubernetes-logging/README.md) **"logging"**
 10. [Домашнее задание 10.](kubernetes-vault/README.md) **"vault"**
-11. Домашнее задание 11. **"CI/CD"** (Не сделано)
-12. [Домашнее задание 11.](kubernetes-gitops/README.md) **"gitops"**
-13. [Домашнее задание 12.](kubernetes-debug/README.md) **"debug"**
+11. Домашнее задание 11. **"CI/CD"** (Не сделано - и не будет :))
+12. [Домашнее задание 12.](kubernetes-gitops/README.md) **"gitops"**
+13. [Домашнее задание 13.](kubernetes-debug/README.md) **"debug"**
+14. [Домашнее задание 14.](kubernetes-storage/README.md) **"storage"**
