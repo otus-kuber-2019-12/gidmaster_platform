@@ -1,0 +1,6 @@
+---
+# handlers file for prepare_node
+- name: restart docker
+  service:
+    name: docker
+    state: restarted

@@ -1,0 +1,37 @@
+---
+#--- KUBERNETES API ---
+
+- name: Install required system packages
+  apt: 
+    name: "{{ item }}" 
+    state: latest 
+    update_cache: yes
+  loop: [ 'apt-transport-https', 'curl']
+
+- name: Add kubernetes API GPG apt Key
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+- name: Add kubernetes API Repository
+  apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+
+- name: Update apt and install kubectl
+  apt: 
+    update_cache: yes 
+    name: kubectl=1.17.4-00
+    state: present
+
+- name: Update apt and install kubelet
+  apt: 
+    update_cache: yes 
+    name: kubelet=1.17.4-00
+    state: present
+
+- name: Update apt and install kubeadm
+  apt: 
+    update_cache: yes 
+    name: kubeadm=1.17.4-00
+    state: present
