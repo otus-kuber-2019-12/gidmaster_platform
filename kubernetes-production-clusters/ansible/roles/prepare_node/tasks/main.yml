@@ -1,0 +1,10 @@
+---
+# tasks file for prepare_node
+- name: Include task list
+  include_tasks:
+    file: "{{ item }}"
+  with_items:
+      - swap.yml
+      - routing.yml
+      - docker.yml
+      - k8s_api.yml
